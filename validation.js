@@ -60,7 +60,7 @@ function login() {
         
         // Optional: Save session status
         localStorage.setItem('currentUser', JSON.stringify(user));
-        alert("Login Successful!");
+        window.location.href = "home.html";
     } else {
         msg.style.color = "#f87171";
         msg.innerText = "Invalid credentials or account does not exist.";

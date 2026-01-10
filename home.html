@@ -1,133 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aroma Yoga Centre</title>
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
-
-  <!-- Navbar -->
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
     <header>
-        <nav class="navbar">
-            <h1 class="logo">Aroma Yoga Centre</h1>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="register-payment.html">Registration</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <h1 class="logo">Aroma Yoga Centre</h1>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register-payment.html">Registration</a></li>
+          <li>
+            <button class="logout-btn" onclick="logout()">
+              <i class="fas fa-right-from-bracket"></i> Logout
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    
-  <!-- Home -->
+    <!-- Home -->
     <section id="home" class="hero">
-        <h2>Find Your Inner Peace</h2>
-        <p>Practice Yoga. Live Healthy. Stay Calm.</p>
-        <a href="#services" class="btn">Explore Classes</a>
+      <h2>Find Your Inner Peace</h2>
+      <p>Practice Yoga. Live Healthy. Stay Calm.</p>
+      <div class="btns">
+        <a href="services.html" class="btn">Explore Classes</a>
+        <a href="register-payment.html" class="btn">Book Now</a>
+      </div>
     </section>
 
-     <!-- About -->
+    <!-- About -->
     <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>
-            Yoga Bliss helps you connect mind, body, and soul through guided yoga
-            practices designed for all levels.
-        </p>
+      <h2>About Us</h2>
+      <p>
+        Yoga Bliss helps you connect mind, body, and soul through guided yoga
+        practices designed for all levels.
+      </p>
     </section>
- <!-- Services -->
+    <!-- Services -->
     <section id="services" class="section">
-        <h2>Our Services</h2>
+      <h2>Our Services</h2>
 
-        <div class="card-container">
-            <div class="card">
-                <h3>Morning Yoga</h3>
-                <p>Start your day with fresh energy.</p>
-            </div>
-
-            <div class="card">
-                <h3>Meditation</h3>
-                <p>Relax your mind and reduce stress.</p>
-            </div>
-
-             <div class="card">
-                <h3>Online Classes</h3>
-                <p>Practice yoga from anywhere.</p>
-            </div>
+      <div class="card-container">
+        <div class="card">
+          <h3>Morning Yoga</h3>
+          <p>Start your day with fresh energy.</p>
         </div>
+
+        <div class="card">
+          <h3>Meditation</h3>
+          <p>Relax your mind and reduce stress.</p>
+        </div>
+
+        <div class="card">
+          <h3>Offline Classes</h3>
+          <p>Practice yoga from anywhere.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Gallery -->
     <section id="gallery" class="section">
-        <h2>Gallery</h2>
-        <div class="gallery">
-            <div class="gallery-box">Yoga Pose 1</div>
-            <div class="gallery-box">Yoga Pose 2</div>
-            <div class="gallery-box">Yoga Pose 3</div>
-        </div>
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <div class="gallery-box">Yoga Pose 1</div>
+        <div class="gallery-box">Yoga Pose 2</div>
+        <div class="gallery-box">Yoga Pose 3</div>
+      </div>
     </section>
 
     <section id="testimonals" class="section">
-        <h1>Testimonals</h1>
-     <div class="Testimonals">
+      <h1>Testimonals</h1>
+      <div class="Testimonals">
         <div class="card">
-            <h3>Seema Bhoite ⭐⭐⭐⭐⭐</h3>
-            <p>I did face yoga in 21 day . I really thank to "Aroma yoga centre" bcz priyanka mam 
-                took breathing exercises, massage techniques, lymphatic drainage, head massage,how to 
-                prepare detox water etc.and very imp teaching 
-techniques step by step superb. Sessions made me feel relaxed and calm. I recommend this to join.</p>
+          <h3>Seema Bhoite ⭐⭐⭐⭐⭐</h3>
+          <p>
+            I did face yoga in 21 day . I really thank to "Aroma yoga centre"
+            bcz priyanka mam took breathing exercises, massage techniques,
+            lymphatic drainage, head massage,how to prepare detox water etc.and
+            very imp teaching techniques step by step superb. Sessions made me
+            feel relaxed and calm. I recommend this to join.
+          </p>
         </div>
-<div class="card">
-        <h3>Sonal Dendule⭐⭐⭐⭐⭐</h3>
-    <p>Hi there... Sonal here... Joined Aroma Yoga Centre a year back and this has helped me a lot in increasing my weight,my posture and confidence level too. Priyanka Madam has taught us Face Yoga which has improved in my skin texture
-Love to do trekking with the team and lots of excercise in the park.
-Thanks Priyanka Madam for all the positive changes 😊😊</p>
-</div>
+        <div class="card">
+          <h3>Sonal Dendule⭐⭐⭐⭐⭐</h3>
+          <p>
+            Hi there... Sonal here... Joined Aroma Yoga Centre a year back and
+            this has helped me a lot in increasing my weight,my posture and
+            confidence level too. Priyanka Madam has taught us Face Yoga which
+            has improved in my skin texture Love to do trekking with the team
+            and lots of excercise in the park. Thanks Priyanka Madam for all the
+            positive changes 😊😊
+          </p>
+        </div>
 
-<div class="card">
-    <h3>Supriya Sasane⭐⭐⭐⭐⭐</h3>
-    <p>At Aroma Yoga the focus is not only on just Aasanas but on stamina, perseverance, strenth, capacity building etc.
-The best part is it teaches healthy lifestyle, food habits which are very beneficial along with Yoga.
-Thanks to Priyanka mam for cooperation and support.</p>
+        <div class="card">
+          <h3>Supriya Sasane⭐⭐⭐⭐⭐</h3>
+          <p>
+            At Aroma Yoga the focus is not only on just Aasanas but on stamina,
+            perseverance, strenth, capacity building etc. The best part is it
+            teaches healthy lifestyle, food habits which are very beneficial
+            along with Yoga. Thanks to Priyanka mam for cooperation and support.
+          </p>
+        </div>
 
-</div>
+        <div class="card">
+          <h3>Ashwini Sali⭐⭐⭐⭐⭐</h3>
+          <p>
+            Maza yoga class khup khup happy place for my life n my yoga teacher
+            is very very sweet n very good teaching for yoga my teacher it's my
+            soul mate friend TQ for God ty mala bhetlya TQ very much dear
+            Priyanka ma'am
+          </p>
+        </div>
 
-<div class="card">
-    <h3>Ashwini Sali⭐⭐⭐⭐⭐</h3>
-  <p>Maza yoga class khup khup happy place for my life n my yoga teacher is very very sweet n very good teaching for yoga my teacher 
-    it's my soul mate friend TQ for God ty mala bhetlya TQ very much dear Priyanka ma'am</p>  
-</div>
-
-<div class="card">
-    <h3>Anamika Lunkad⭐⭐⭐⭐⭐</h3>
-    <p>It's an very beneficial and relaxing course,
-This made me more engrossed in the aasanas.I have been more flexible since I joined the yoga class. lt's fun learning a new aasan everyday. I really enjoyed doing yoga with Priyanka mam and all the members of the batch. A very big thanks to mam for teaching all the Asanas with proper steps 🙏
-Thank you! Priyanka mam .</p>
-</div>
-     </div>
+        <div class="card">
+          <h3>Anamika Lunkad⭐⭐⭐⭐⭐</h3>
+          <p>
+            It's an very beneficial and relaxing course, This made me more
+            engrossed in the aasanas.I have been more flexible since I joined
+            the yoga class. lt's fun learning a new aasan everyday. I really
+            enjoyed doing yoga with Priyanka mam and all the members of the
+            batch. A very big thanks to mam for teaching all the Asanas with
+            proper steps 🙏 Thank you! Priyanka mam .
+          </p>
+        </div>
+        <div class="card">
+          <h3>Anamika Lunkad⭐⭐⭐⭐⭐</h3>
+          <p>
+            It's an very beneficial and relaxing course, This made me more
+            engrossed in the aasanas.I have been more flexible since I joined
+            the yoga class. lt's fun learning a new aasan everyday. I really
+            enjoyed doing yoga with Priyanka mam and all the members of the
+            batch. A very big thanks to mam for teaching all the Asanas with
+            proper steps 🙏 Thank you! Priyanka mam .
+          </p>
+        </div>
+      </div>
     </section>
 
-     <!-- Contact -->
+    <!-- Contact -->
     <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p>Email: priyankavikasraut@gmail.com</p>
-        <p>Phone: +91 7798081007</p>
+      <h2>Contact Us</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>Email</span>
+            <p>priyankavikasraut@gmail.com</p>
+          </div>
+          <div class="contact-item">
+            <span>Phone</span>
+            <p>+91 7798081007</p>
+          </div>
+          <div class="contact-item">
+            <span>Address</span>
+            <p>Vijayraj heritage, 60 Feet Rd, Pimple Gurav, Pune.</p>
+          </div>
+
+          <div class="social-links">
+            <a
+              href="https://wa.me/917798081007"
+              target="_blank"
+              class="social-icon wa"
+              title="WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/aromayogacentre/"
+              target="_blank"
+              class="social-icon ig"
+              title="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/aromayogacentre/"
+              target="_blank"
+              class="social-icon fb"
+              title="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UC50olEgDaIZmLrf2UFIRn6A"
+              target="_blank"
+              class="social-icon yt"
+              title="YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="map-side">
+          <a
+            href="https://maps.google.com/?q=Aroma+Yoga+Centre+Pimple+Gurav"
+            target="_blank"
+            class="map-link"
+          >
+            📍 Find us on Google Maps
+          </a>
+        </div>
+      </div>
     </section>
     <footer>
-        <nav class="nav-links">
-           <i class="fa fa-instagram" aria-hidden="true"></i>
-            <li><a href=""></a> <br>WhatsApp</li>
-
-        </nav>
-        <p>©️2026 Aroma Yoga Centre. All rights reserved.</p>
+      <p>©2026 Aroma Yoga Centre. All rights reserved.</p>
     </footer>
-   
 
-  
-<script src="home.js"></script> 
-</body>
+    <script src="home.js"></script>
+  </body>
 </html>
