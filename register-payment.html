@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <h1 class="logo"></h1>
+    </nav>
+</header>
+
+<section class="section">
+    <h2>Registration Form</h2>
+
+    <form id="regForm" onsubmit="return validateForm()">
+
+        <input type="text" id="name" placeholder="Full Name">
+        <span class="error" id="nameError"></span>
+
+        <input type="email" id="email" placeholder="Email">
+        <span class="error" id="emailError"></span>
+
+        <input type="text" id="phone" placeholder="Phone Number">
+        <span class="error" id="phoneError"></span>
+
+        <select id="batch">
+            <option value="">Select Batch</option>
+            <option>Morning</option>
+            <option>Evening</option>
+        </select>
+        <span class="error" id="batchError"></span>
+
+        <h3>Pay Using Google Pay</h3>
+        <p>Monthly Fees: ₹1000</p>
+
+        <img src="./images/gpay.jpeg" alt="Google Pay QR" class="qr">
+
+        <p class="note">Scan QR and complete payment before submitting</p>
+
+        <button type="submit" class="btn">Submit Registration</button>
+
+        <p class="success" id="successMsg"></p>
+    </form>
+</section>
+
+<script src="validation.js"></script>
+</body>
+</html>

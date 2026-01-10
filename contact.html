@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <section class="section">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm" onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name">
+        <span class="error" id="nameError"></span>
+
+        <input type="email" id="email" placeholder="Your Email">
+        <span class="error" id="emailError"></span>
+
+        <input type="text" id="phone" placeholder="Phone Number">
+        <span class="error" id="phoneError"></span>
+
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <span class="error" id="messageError"></span>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p class="success" id="successMsg"></p>
+    </form>
+</section>
+<script src="validation.js"></script>
+</body>
+</html>
