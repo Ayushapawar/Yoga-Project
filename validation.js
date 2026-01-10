@@ -1,90 +1,109 @@
-function validateForm() {
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let message = document.getElementById("message").value.trim();
+// 1. INITIALIZE: Load users from localStorage OR start with empty array if none exist
+let users = JSON.parse(localStorage.getItem('userDatabase')) || [];
 
-    let valid = true;
-
-    // Clear previous messages
-    document.getElementById("nameError").innerHTML = "";
-    document.getElementById("emailError").innerHTML = "";
-    document.getElementById("phoneError").innerHTML = "";
-    document.getElementById("messageError").innerHTML = "";
-    document.getElementById("successMsg").innerHTML = "";
-
-    // Name validation
-    if (name === "") {
-        document.getElementById("nameError").innerHTML = "Name is required";
-        valid = false;
-    }
-
-    // Email validation
-    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-        document.getElementById("emailError").innerHTML = "Enter a valid email";
-        valid = false;
-    }
-
-    // Phone validation
-    if (phone.length !== 10 || isNaN(phone)) {
-        document.getElementById("phoneError").innerHTML = "Enter valid 10-digit phone number";
-        valid = false;
-    }
-
-    // Message validation
-    if (message === "") {
-        document.getElementById("messageError").innerHTML = "Message cannot be empty";
-        valid = false;
-    }
-
-    // Success
-    if (valid) {
-        document.getElementById("successMsg").innerHTML =
-            "Thank you! Your message has been sent.";
-    }
-
-    return valid;
+// Helper function to save current users array to browser storage
+function saveToStorage() {
+    localStorage.setItem('userDatabase', JSON.stringify(users));
 }
-function validateForm() {
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let batch = document.getElementById("batch").value;
 
-    let valid = true;
+// Function to handle Signup
+function signup() {
+    const name = document.getElementById('SignUpName').value.trim();
+    const email = document.getElementById('SignUpEmail').value.trim();
+    const password = document.getElementById('SignUpPassword').value.trim();
+    const msg = document.getElementById('SignPassmsg');
 
-    document.getElementById("nameError").innerHTML = "";
-    document.getElementById("emailError").innerHTML = "";
-    document.getElementById("phoneError").innerHTML = "";
-    document.getElementById("batchError").innerHTML = "";
-    document.getElementById("successMsg").innerHTML = "";
-
-    if (name === "") {
-        document.getElementById("nameError").innerHTML = "Name required";
-        valid = false;
+    if (name === "" || email === "" || password === "") {
+        msg.style.color = "#f87171";
+        msg.innerText = "Please fill in all fields.";
+        return;
     }
 
-    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-        document.getElementById("emailError").innerHTML = "Invalid email";
-        valid = false;
+    // Check if user already exists in our loaded array
+    const userExists = users.some(user => user.email === email);
+    if (userExists) {
+        msg.style.color = "#f87171";
+        msg.innerText = "Email already registered!";
+        return;
     }
 
-    if (phone.length !== 10 || isNaN(phone)) {
-        document.getElementById("phoneError").innerHTML = "Invalid phone number";
-        valid = false;
+    // Add user to the array
+    users.push({ name, email, password });
+    
+    // 2. SAVE: Update localStorage so it survives refresh
+    saveToStorage();
+    
+    msg.style.color = "#10b981"; 
+    msg.innerText = "Account created! You can now Sign In.";
+    
+    document.getElementById('SignupForm').reset();
+}
+
+// Function to handle Login
+function login() {
+    const email = document.getElementById('LoginEmail').value.trim();
+    const password = document.getElementById('LoginPassword').value.trim();
+    const msg = document.getElementById('LoginPassmsg');
+
+    if (email === "" || password === "") {
+        msg.style.color = "#f87171";
+        msg.innerText = "Please enter both email and password.";
+        return;
     }
 
-    if (batch === "") {
-        document.getElementById("batchError").innerHTML = "Select a batch";
-        valid = false;
-    }
+    // Search through the users array (which stays populated thanks to localStorage)
+    const user = users.find(u => u.email === email && u.password === password);
 
-    if (valid) {
-        document.getElementById("successMsg").innerHTML =
-            "Registration Successful! Payment received via Google Pay.";
+    if (user) {
+        msg.style.color = "#10b981";
+        msg.innerText = `Welcome back, ${user.name}!`;
+        
+        // Optional: Save session status
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        alert("Login Successful!");
+    } else {
+        msg.style.color = "#f87171";
+        msg.innerText = "Invalid credentials or account does not exist.";
     }
+}
 
-    return false; // prevent actual submission (demo)
+// --- Toggle Logic & Password Visibility (unchanged) ---
+
+let isLogin = true;
+function toggleForm() {
+    const loginForm = document.getElementById('LoginForm');
+    const signupForm = document.getElementById('SignupForm');
+    const sideTitle = document.getElementById('side-title');
+    const sideText = document.getElementById('side-text');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    document.getElementById('LoginPassmsg').innerText = "";
+    document.getElementById('SignPassmsg').innerText = "";
+
+    if (isLogin) {
+        loginForm.classList.add('hidden');
+        signupForm.classList.remove('hidden');
+        sideTitle.innerText = "Hello, Friend!";
+        sideText.innerText = "Enter your details and start your journey with us";
+        toggleBtn.innerText = "Sign In Instead";
+        isLogin = false;
+    } else {
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+        sideTitle.innerText = "Welcome Back!";
+        sideText.innerText = "Login with your personal info to stay connected";
+        toggleBtn.innerText = "Create Account";
+        isLogin = true;
+    }
+}
+
+function togglePasswordVisibility(inputId, el) {
+    const passwordInput = document.getElementById(inputId);
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        el.innerText = "Hide";
+    } else {
+        passwordInput.type = "password";
+        el.innerText = "Show";
+    }
 }

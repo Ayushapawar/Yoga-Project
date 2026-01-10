@@ -1,45 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login-Form</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <form id="Login-Form" class="form-active">
-        <h1>Login Form</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoga Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="side-panel">
+          <div class="panel-content">
+            <h2 id="side-title">Welcome Back!</h2>
+            <p id="side-text">
+              To keep connected with us please login with your personal info
+            </p>
+            <button class="ghost-btn" id="toggleBtn" onclick="toggleForm()">
+              Create Account
+            </button>
+          </div>
+        </div>
 
-        <input type="text" id="LoginEmail" placeholder="Email">
-        <input type="password" id="LoginPassword" placeholder="Password">
+        <div class="form-container">
+          <form id="LoginForm" class="form-body">
+            <h1>Sign In</h1>
+            <div class="social-icons">
+              <div class="icon">f</div>
+              <div class="icon">G</div>
+              <div class="icon">in</div>
+            </div>
+            <span>or use your email account</span>
+            <input type="email" id="LoginEmail" placeholder="Email" required />
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="LoginPassword"
+                placeholder="Password"
+                required
+              />
+              <span
+                class="toggle-password"
+                onclick="togglePasswordVisibility('LoginPassword', this)"
+                >Show</span
+              >
+            </div>
+            <a href="#" class="forgot">Forgot your password?</a>
+            <button type="button" class="main-btn" onclick="login()">
+              Sign In
+            </button>
+            <p id="LoginPassmsg" class="Msg"></p>
+          </form>
 
-        <p id="LoginPassmsg" class="Msg"></p>
-
-        <button type="button" onclick="login()">Login</button>
-
-        <p class="toggle-text">
-            Don't have an Account?
-            <span onclick="toggleform()">Create Account</span>
-         </p>
-    </form>
-
-    <form id="Signup Form" class="form-active">
-        <h1>SignUp</h1>
-
-        <input type="text" id="SignUpName" placeholder="FullName">
-          <input type="text" id="SignUpEmail" placeholder="Email">
-        <input type="password" id="SignUpPassword" placeholder="Password">
-
-        <p id="SignPassmsg" class="Msg"></p>
-
-        <button type="button" onclick="signup()">Signup</button>
-
-        <p class="toggle-text">
-            Already have an account
-            <span onclick="toggleform()">Login Here</span>
-        </p>
-    </form>
+          <form id="SignupForm" class="form-body hidden">
+            <h1>Create Account</h1>
+            <div class="social-icons">
+              <div class="icon">f</div>
+              <div class="icon">G</div>
+              <div class="icon">in</div>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" id="SignUpName" placeholder="Name" required />
+            <input type="email" id="SignUpEmail" placeholder="Email" required />
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="SignUpPassword"
+                placeholder="Password"
+                required
+              />
+              <span
+                class="toggle-password"
+                onclick="togglePasswordVisibility('SignUpPassword', this)"
+                >Show</span
+              >
+            </div>
+            <button type="button" class="main-btn" onclick="signup()">
+              Sign Up
+            </button>
+            <p id="SignPassmsg" class="Msg"></p>
+          </form>
+        </div>
+      </div>
     </div>
-</body>
+
+    <script src="validation.js"></script>
+  </body>
 </html>
