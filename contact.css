@@ -1,144 +1,208 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+/* --- Root Colors --- */
+:root {
+    --primary-green: #2f6f5f;
+    --hover-green: #24594c;
+    --dark-footer: #333333;
+    --light-bg: #f3f9f7;
+    --white: #ffffff;
+    --text-main: #333;
+    --text-muted: #666;
+    --modal-green: #4a7c59; /* Slightly different shade used in modal */
 }
 
-/* Hero */
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* --- Hero Section --- */
 .contact-hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #2f6f5f, #5fa79a);
-  color: #fff;
-  animation: fadeDown 1s ease;
+    background: linear-gradient(rgba(47, 111, 95, 0.8), rgba(47, 111, 95, 0.8)), 
+                url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    padding: 0 20px;
+    animation: fadeDown 1s ease;
 }
 
 .contact-hero h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.contact-hero p {
-  font-size: 16px;
-}
-
-/* Main Section */
+/* --- Contact Section & Cards --- */
 .contact-section {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-/* Cards */
 .contact-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
 }
 
 .contact-card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  animation: fadeUp 1s ease;
-  transition: transform 0.4s ease;
+    background: var(--white);
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
 }
 
 .contact-card:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .contact-card span {
-  font-size: 34px;
-  display: block;
-  margin-bottom: 10px;
+    font-size: 36px;
+    display: block;
+    margin-bottom: 12px;
 }
 
-.contact-card h3 {
-  color: #2f6f5f;
-  margin-bottom: 5px;
-}
-
-/* Form */
+/* --- Form Styling --- */
 .contact-form-box {
-  max-width: 600px;
-  margin: auto;
-  background: #f4f9f7;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-  animation: fadeUp 1.2s ease;
+    max-width: 620px;
+    margin: auto;
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form-box h2 {
-  text-align: center;
-  color: #2f6f5f;
-  margin-bottom: 25px;
+    text-align: center;
+    color: var(--primary-green);
+    margin-bottom: 25px;
 }
 
 .contact-form-box input,
 .contact-form-box textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  outline: none;
-  font-size: 15px;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: border 0.3s ease;
 }
 
-.contact-form-box textarea {
-  resize: none;
-  height: 120px;
+.contact-form-box input:focus,
+.contact-form-box textarea:focus {
+    border-color: var(--primary-green);
 }
 
 .contact-form-box button {
-  width: 100%;
-  padding: 12px;
-  background: #2f6f5f;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .contact-form-box button:hover {
-  background: #24594c;
-  transform: translateY(-4px);
+    background: var(--hover-green);
+    transform: scale(1.02);
 }
 
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* --- Modal Styles --- */
+.modal-overlay {
+    display: none; /* Controlled by .show-modal class via JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
 }
 
+.modal-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.modal-box h3 {
+    color: var(--modal-green);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.modal-close-btn {
+    background-color: var(--modal-green);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #386144;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 124, 89, 0.3);
+}
+
+.show-modal {
+    display: flex !important;
+}
+
+/* --- Animations --- */
 @keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .contact-hero h1 {
-    font-size: 30px;
-  }
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

@@ -60,7 +60,8 @@ function login() {
         
         // Optional: Save session status
         localStorage.setItem('currentUser', JSON.stringify(user));
-        window.location.href = "home.html";
+        // alert("Login Successful!");
+        window.location.href="home.html";
     } else {
         msg.style.color = "#f87171";
         msg.innerText = "Invalid credentials or account does not exist.";
@@ -106,4 +107,16 @@ function togglePasswordVisibility(inputId, el) {
         passwordInput.type = "password";
         el.innerText = "Show";
     }
+}
+
+function logout() {
+    console.log("Logout function triggered"); // This helps you debug
+
+    // 1. Clear all stored data
+    localStorage.clear(); 
+    sessionStorage.clear();
+
+    // 2. Immediate redirect
+    // Use the full filename of your login/landing page
+    window.location.href = "index.html"; 
 }

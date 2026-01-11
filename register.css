@@ -1,0 +1,234 @@
+/* --- Registration Hero (Matching Contact Page) --- */
+.registration-hero {
+    background: linear-gradient(rgba(74, 124, 89, 0.8), rgba(74, 124, 89, 0.8)), 
+                url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.registration-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.registration-hero p {
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* --- Adjusted Registration Section --- */
+.registration-section {
+    padding: 60px 20px; /* Reduced top padding since hero provides space */
+    background: #f4f7f4;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Keeps card toward the top of the section */
+}
+
+/* Ensure the card has a slight upward offset to "overlap" the hero slightly if desired, 
+   or just keep it clean below the hero */
+.registration-card {
+    background: white;
+    width: 100%;
+    max-width: 700px; /* Slightly wider for better grid display */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: -50px; /* This creates a nice overlay effect on the hero */
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Responsive Fix for Hero --- */
+@media (max-width: 768px) {
+    .registration-hero h1 { font-size: 2.2rem; }
+    .registration-hero p { font-size: 1rem; }
+    .registration-card { margin-top: -30px; padding: 25px; }
+}
+
+/* Registration Page Styling */
+.registration-section {
+    padding: 120px 20px 60px;
+    background: #f4f7f4;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.registration-card {
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-header { text-align: center; margin-bottom: 30px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.input-box { margin-bottom: 15px; }
+.input-box label { display: block; margin-bottom: 5px; font-weight: 600; color: #4a7c59; }
+.input-box input, .input-box select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #4a7c59;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.qr-box { background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 20px 0; }
+.paid-btn { background: #4a7c59; color: white; padding: 12px 25px; border: none; border-radius: 30px; cursor: pointer; }
+.close-modal { background: none; border: none; color: #888; margin-top: 15px; cursor: pointer; display: block; width: 100%; }
+
+/* Success Icon */
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #4a7c59;
+    color: white;
+    font-size: 40px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* Ensure the overlay is hidden by default */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Class to show the modal via JavaScript */
+.modal-overlay.show-modal {
+    display: flex;
+}
+
+.success-icon {
+    font-size: 50px;
+    color: #2f6f5f;
+    margin-bottom: 15px;
+}
+
+
+/* Modal Overlay - Dark background */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Blurs the background */
+}
+
+/* Modal Card Style */
+.modal-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* QR Code Box */
+.qr-box img {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+/* Buttons inside modal */
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.paid-btn {
+    background: #2f6f5f;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal {
+    background: #eee;
+    color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* The magic class to show the modal */
+.show-modal {
+    display: flex !important;
+}
