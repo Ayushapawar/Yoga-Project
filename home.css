@@ -43,7 +43,46 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
 }
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo and text */
+}
 
+.nav-logo {
+    height: 65px; /* This is the "Medium" sweet spot */
+    width: auto;  /* Keeps the aspect ratio perfect */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Gives it a slight lift */
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05); /* Logo pops out slightly when hovered */
+}
+
+.logo-text {
+    color: var(--primary);
+    font-size: 1.6rem; /* Matches the medium logo size */
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Ensure the header expands slightly to fit the medium logo */
+header {
+    padding: 0.6rem 5%; 
+    background: var(--white);
+}
+
+/* Adjust for mobile so the logo doesn't take over the screen */
+@media (max-width: 768px) {
+    .nav-logo {
+        height: 50px;
+    }
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
 .nav-links {
     display: flex;
     list-style: none;
@@ -112,31 +151,7 @@ header {
     gap: 30px;
 }
 .btn:hover { background: var(--accent); transform: translateY(-3px); }
-
-/* Sections */
-.section {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.section h2::after {
-    content: '';
-    width: 60px;
-    height: 3px;
-    background: var(--primary);
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#about {
+css                                                              #about {
   max-width: 900px;
   margin: 60px auto;
   padding: 40px 30px;
@@ -198,7 +213,246 @@ header {
 #about:hover {
   transform: translateY(-12px);
 }
-/*services*/
+/* Home Section */
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Dark overlay for readability */
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 0 20px;
+}
+
+.slide-content h2 { font-size: 3.5rem; margin-bottom: 1rem; }
+.slide-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover { background: var(--primary); }
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Dots Indicator */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active { background: white; width: 30px; border-radius: 10px; }
+
+/* Sections */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Services & Testimonials Cards */
+.card-container, .Testimonals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    text-align: left; /* Better for readability in testimonials */
+}
+
+.card:hover { transform: translateY(-10px); }
+.card h3 { color: var(--primary); margin-bottom: 15px; }
+/* testomonical */
+/* Testimonials Section Layout */
+#testimonials {
+    background-color: #fcfdfc; /* Very light tint of green */
+    padding: 100px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 50px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Simplified Card Style */
+.t-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* Very soft shadow */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.t-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(74, 124, 89, 0.1); /* Sage green tint on hover */
+}
+
+.quote {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.user-info {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.user-name {
+    display: block;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.stars {
+    color: #ffb400; /* Professional gold */
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Simple & Good Looking Button */
+.action-area {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.simple-google-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 12px 35px;
+    border-radius: 6px; /* Slightly squared for a modern look */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.simple-google-btn i {
+    font-size: 1.1rem;
+}
+
+.simple-google-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* services */
 #services {
   padding: 60px 20px;
   background: #f4f9f7;
@@ -256,30 +510,8 @@ header {
 .service-card p {
   font-size: 15.5px;
   color: #555;
-  line-height: 1.7;
+  line-height: 1.7;
 }
-
-
-/* Services & Testimonials Cards */
-.card-container, .Testimonals {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transition: 0.3s;
-    text-align: left; /* Better for readability in testimonials */
-}
-
-.card:hover { transform: translateY(-10px); }
-.card h3 { color: var(--primary); margin-bottom: 15px; }
-
 /* Contact Section Grid */
 #contact { background: var(--white); }
 
@@ -363,61 +595,68 @@ header {
 }
 
 /* Gallery */
-#gallery {
-  padding: 60px 20px;
-  background: #ffffff;
+/* Gallery Section Styling */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
-#gallery h2 {
-  text-align: center;
-  font-size: 34px;
-  color: #2f6f5f;
-  margin-bottom: 40px;
-}
-
-/* Grid Layout */
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1300px;
-  margin: auto;
-}
-
-/* Image Card */
 .gallery-item {
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden; /* Important for the zoom effect */
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-/* Image */
 .gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* Hover Effect */
-.gallery-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+/* Hover Effects */
+.gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 124, 89, 0.6); /* Sage Green Overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item .overlay span {
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 30px;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.1);
+    transform: scale(1.1); /* Zooms image in slightly */
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  #gallery h2 {
-    font-size: 28px;
-  }
+.gallery-item:hover .overlay {
+    opacity: 1; /* Shows the "View All" text */
 }
 
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* Footer */
 footer {

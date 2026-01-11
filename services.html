@@ -1,34 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Services | Yoga Bliss</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Aroma Yoga Centre</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="services.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
-
-
-<section class="section">
-    <h2>Our Services</h2>
-
-    <div class="card-container">
-        <div class="card">
-            <h3>Morning Yoga</h3>
-            <p>Boost energy and flexibility.</p>
+    <header>
+      <nav class="navbar">
+        <div class="logo-container">
+          <img src="./images/logo.jpg" alt="Aroma Yoga Logo" class="nav-logo" />
+          <span class="logo-text">Aroma Yoga Centre</span>
         </div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register-payment.html">Registration</a></li>
+          <li>
+            <button class="logout-btn" onclick="logout()">
+              <i class="fas fa-right-from-bracket"></i> Logout
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-        <div class="card">
-            <h3>Meditation</h3>
-            <p>Reduce stress and anxiety.</p>
+    <section class="services-hero">
+        <h1>Our Services</h1>
+        <p>Holistic health through traditional yoga and community wellness.</p>
+    </section>
+
+    <section class="container section">
+        <h2 class="center-title">Yoga & Meditation</h2>
+        <div class="service-simple-grid">
+            <div class="s-card">
+                <div class="s-icon-box"><i class="fas fa-calendar-check"></i></div>
+                <h3>Daily Yoga Classes</h3>
+                <p>Consistent practice with dedicated morning and evening batches to fit your lifestyle.</p>
+            </div>
+
+            <div class="s-card">
+                <div class="s-icon-box"><i class="fas fa-spa"></i></div>
+                <h3>Meditation & Relaxation</h3>
+                <p>Deep relaxation techniques and guided meditation to reduce stress and find inner peace.</p>
+            </div>
+
+            <div class="s-card">
+                <div class="s-icon-box"><i class="fas fa-wind"></i></div>
+                <h3>Pranayama Sessions</h3>
+                <p>Traditional breathing exercises to improve lung capacity, focus, and vital energy.</p>
+            </div>
+
+            <div class="s-card">
+                <div class="s-icon-box"><i class="fas fa-seedling"></i></div>
+                <h3>Yoga for Beginners</h3>
+                <p>Foundational postures taught with personal attention to ensure correct form and safety.</p>
+            </div>
+
+            <div class="s-card">
+                <div class="s-icon-box"><i class="fas fa-heart"></i></div>
+                <h3>Stress Relief Yoga</h3>
+                <p>Specific asanas and mindfulness practices designed to release physical and mental tension.</p>
+            </div>
+
+             <div class="s-card">
+                <div class="s-icon-box"><i class="fas fa-clock"></i></div>
+                <h3>Morning & Evening Batches</h3>
+                <p> Convenient batch timings suitable for students, professionals, and
+            homemakers to maintain a consistent yoga routine.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>Online Classes</h3>
-            <p>Practice anytime, anywhere.</p>
+    <section class="section bg-soft">
+        <div class="container">
+            <h2 class="center-title">Community & Social Activities</h2>
+            <div class="pill-container">
+                <div class="pill">108 Surya Namaskar</div>
+                <div class="pill">Tree Plantation</div>
+                <div class="pill">Cultural-Celebrations</div>
+                <div class="pill">Marathons</div>
+                <div class="pill">Trekking</div>
+                <div class="pill">Essay Competitions</div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <section class="container section">
+        <h2 class="center-title">Why Choose Aroma Yoga?</h2>
+        <div class="why-flex">
+            <div class="why-item"><i class="fas fa-check"></i> Certified & Experienced Trainer</div>
+            <div class="why-item"><i class="fas fa-check"></i> Traditional Yoga Practices</div>
+            <div class="why-item"><i class="fas fa-check"></i> Peaceful Learning Environment</div>
+            <div class="why-item"><i class="fas fa-check"></i> Suitable for All Age Groups</div>
+        </div>
+    </section>
 
+    <footer>
+      <p>©2026 Aroma Yoga Centre. All rights reserved.</p>
+    </footer>
+
+    <script src="home.js"></script>
 </body>
 </html>

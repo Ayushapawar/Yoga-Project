@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="home.css">
+  <meta charset="UTF-8">
+  <title>Contact Us | Aroma Yoga Centre</title>
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    <section class="section">
-    <h2>Contact Us</h2>
 
-    <form id="contactForm" onsubmit="return validateForm()">
-        <input type="text" id="name" placeholder="Your Name">
-        <span class="error" id="nameError"></span>
-
-        <input type="email" id="email" placeholder="Your Email">
-        <span class="error" id="emailError"></span>
-
-        <input type="text" id="phone" placeholder="Phone Number">
-        <span class="error" id="phoneError"></span>
-
-        <textarea id="message" placeholder="Your Message"></textarea>
-        <span class="error" id="messageError"></span>
-
-        <button type="submit" class="btn">Send Message</button>
-        <p class="success" id="successMsg"></p>
-    </form>
+<section class="contact-hero">
+  <h1>Contact Us</h1>
+  <p>We’d love to hear from you. Start your yoga journey with us.</p>
 </section>
-<script src="validation.js"></script>
+
+<section class="contact-section">
+
+  <!-- Contact Info Cards -->
+  <div class="contact-cards">
+
+    <div class="contact-card">
+      <span>📍</span>
+      <h3>Location</h3>
+      <p>Aroma Yoga Centre<br>Pimple Gurav, India</p>
+    </div>
+
+    <div class="contact-card">
+      <span>📞</span>
+      <h3>Call Us</h3>
+      <p>+91 XXXXX XXXXX</p>
+    </div>
+
+    <div class="contact-card">
+      <span>📧</span>
+      <h3>Email</h3>
+      <p>aromayogacentre@gmail.com</p>
+    </div>
+
+  </div>
+
+  <!-- Contact Form -->
+  <div class="contact-form-box">
+    <h2>Send a Message</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Phone Number">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</section>
+
 </body>
 </html>

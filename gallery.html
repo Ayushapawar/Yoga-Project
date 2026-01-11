@@ -1,35 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <section class="section">
-    <h2><a href="#">Gallery</a></h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Aroma Yoga Centre</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo-container">
+          <img
+            src="./images/logo.jpg"
+            alt="Aroma Yoga Logo"
+            class="nav-logo"
+          />
+          <span class="logo-text">Aroma Yoga Centre</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register-payment.html">Registration</a></li>
+          <li>
+            <button class="logout-btn" onclick="logout()">
+              <i class="fas fa-right-from-bracket"></i> Logout
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="gallery">
-        <div class="gallery-box"><img src="./images/img2.webp" alt=""></div>
-    </div>
+    <section class="gallery-hero">
+      <h1>Our Moments</h1>
+      <p>Capturing the essence of peace, health, and community.</p>
+    </section>
 
-    <div class="gallery1">
-             <div class="gallery-box"><img src="./images/img3.webp" alt=""></div>
-    </div>
-
-    <div class="gallery2">
-          <div class="gallery-box"><img src="./images/img4.webp" alt="">
-        <video src="./images/video.mp4" controls muted loop></video>
-        <video src="./images/WhatsApp Video 2026-01-08 at 12.38.06.mp4" controls muted loop></video>
-        <img src="./images/img6.webp" alt="">
+    <section class="container section">
+      <div class="modern-grid-layout">
+        <div class="grid-item">
+          <img
+            src="./images/img1.webp"
+            alt="Hatha Yoga Practice"
+          />
+        </div>
+        <div class="grid-item">
+          <img
+            src="./images/meditation.jpeg"
+            alt="Morning Meditation"
+          />
+        </div>
+        <div class="grid-item">
+          <img
+            src="./images/img3.webp"
+            alt="Nature Trekking"
+          />
         </div>
 
-        <div>
-            <h1>Location🌐</h1>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d484378.78000179207!2d73.51599095624998!3d18.47418000289977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9eba5d44f23%3A0x26aaa1cdc81d42cc!2sAroma%20yoga%20centre!5e0!3m2!1sen!2sin!4v1767983676472!5m2!1sen!2sin" width="600" 
-                    height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="grid-item">
+          <img
+            src="./images/tree plantation.jpeg"
+            alt="Community Tree Plantation"
+          />
         </div>
-    </div>
+        <div class="grid-item">
+          <img
+            src="./images/marathon.jpeg"
+            alt="Group Marathon Run"
+          />
+        </div>
+        <div class="grid-item">
+          <img
+            src="./images/WhatsApp Image 2026-01-08 at 12.38.06.jpeg"
+            alt="Evening Batch Session"
+          />
+        </div>
+
+        <div class="grid-item">
+          <img
+            src="./images/park.jpeg"
+            alt="Outdoor Group Yoga"
+          />
+        </div>
+        <div class="grid-item">
+       <img
+            src="./images/WhatsApp Image 2026-01-11 at 00.06.02.jpeg"
+            alt="Outdoor Group Yoga"
+          />
+        </div>
+        <div class="grid-item">
+          <img
+            src="./images/WhatsApp Image 2026-01-08 at 13.46.43 (1).jpeg"
+            alt="Yoga for Beginners"
+          />
+        </div>
+
+        <div class="grid-item">
+          <img
+            src="./images/img7.avif"
+            alt="Deep Breathing Exercise"
+          />
+        </div>
+        <div class="grid-item">
+          <img
+            src="./images/garba.jpeg"
+            alt="Yoga Retreat Community"
+          />
+        </div>
+        <div class="grid-item">
+          <img
+            src="./images/trekking1.jpeg"
+            alt="Peaceful Yoga Environment"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+  <h2 class="center-title">Videos</h2>
+
+  <div class="video-grid">
+    <video controls>
+      <source src="./videos/video.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+      <source src="./videos/garba video.mp4" type="video/mp4">
+    </video>
+
+     <video controls>
+      <source src="./videos/WhatsApp Video 2026-01-08 at 12.38.06.mp4" type="video/mp4">
+    </video>
+  </div>
 </section>
-</body>
+
+
+    <div id="lightbox" class="lightbox">
+      <button class="lightbox-close"><i class="fas fa-times"></i></button>
+
+      <button class="nav-btn prev-btn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="nav-btn next-btn">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <div class="lightbox-wrapper">
+        <div class="img-container">
+          <img class="lightbox-content" id="lightbox-img" src="" />
+        </div>
+        <div class="lightbox-info">
+          <span id="caption"></span>
+          <span id="image-counter"></span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <footer>
+      <p>©2026 Aroma Yoga Centre. All rights reserved.</p>
+    </footer>
+
+    <script src="gallery.js"></script>
+    <script src="home.js"></script>
+  </body>
 </html>
