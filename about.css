@@ -4,7 +4,7 @@
                 url('https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&fit=crop&w=1500&q=80');
     background-size: cover;
     background-position: center;
-    height: 40vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +34,7 @@
 .about-image { flex: 1; }
 .about-image img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 40px;
     box-shadow: 20px 20px 0px var(--accent);
 }
 
